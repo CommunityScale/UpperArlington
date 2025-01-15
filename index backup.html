@@ -24,7 +24,7 @@
 
 	<!-- Metadata 2024 -->
 	<meta charset="utf-8">
-	<title>Housing Market Detailed Analysis</title>
+	<title>Home for All</title>
 	<meta name="description" content="Explore the City of Upper Arlington Housing Market Detailed Analysis.">
 	<meta name="keywords" content="Upper Arlington, Housing, Urban Planning, CommunityScale, Assessment, Dashboard">
 	<meta name="author" content="CommunityScale">
@@ -87,7 +87,7 @@
 		<div class="topnav">
 			<div class="logo-and-menu">
 				<p class="inline-text">
-					<img src="images/theme/site-icon.svg" class="inline-image" title="Housing Market Detailed Analysis" style="filter: invert(1) brightness(2); height: 22px; position: relative; top: -1px; margin-right: 4px;">
+					<img src="images/theme/site-icon.svg" class="inline-image" title="Home for All" style="filter: invert(1) brightness(2); height: 22px; position: relative; top: -1px; margin-right: 4px;">
 
 
 					<span class="title"><B> Housing Market Analysis</B></span>
@@ -139,6 +139,9 @@
 						through <a href="https://www.scootermediaco.com/" target="_blank" rel="noopener noreferrer">Scooter Media</a>.
 						<a href="https://communityscale.io/" target="_blank" rel="noopener noreferrer">CommunityScale</a> supported the menu of strategies and documentation.
 					</p>
+					<div class="chip-container">
+						<a href="Upper Arlington Housing Strategies.pdf"><button class="button-primary"><span class="fa fa-file"></span> Download <b>HOME FOR ALL</b></button></a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -152,10 +155,10 @@
 
 	<div class="divider" id="Overview" style="margin-top: 0%; padding-top: 0;">
 		<div class="container">
-			<div class="row insight-box" id="Overview">
+			<div class="row insight-box" id="Foreword">
 				<!-- Heading Row -->
 				<div class="twelve columns" style="margin-bottom: 0%;">
-					<h3>Overview</h3>
+					<h3>Foreword</h3>
 				</div>
 
 				<!-- Image with Caption -->
@@ -274,6 +277,336 @@
 |    END OF OVERVIEW     |
 ╰────────────────────────╯
 -->
+
+	<!-- Script for menu buttons -->
+	<script>
+		const filters = {};
+
+		// Update filter function
+		window.updateFilter = function (columnIndex, value, button) {
+			// If the same filter is clicked again, remove it (toggle off)
+			if (filters[columnIndex] === value) {
+				delete filters[columnIndex];
+				button.classList.remove('active');
+			} else {
+				// If there's an existing filter for that column, remove its active class
+				if (filters[columnIndex]) {
+					const oldValue = filters[columnIndex];
+					const oldButton = document.querySelector(
+						`.button.button-primary.active[data-column='${columnIndex}'][data-value='${oldValue}']`
+					);
+					if (oldButton) {
+						oldButton.classList.remove('active');
+					}
+				}
+				// Apply the new filter
+				filters[columnIndex] = value;
+				button.classList.add('active');
+			}
+			applyFilters();
+		};
+
+		// Apply filters function
+		function applyFilters() {
+			for (const columnIndex in filters) {
+				$('#strategy-table').DataTable().column(columnIndex).search(filters[columnIndex]);
+			}
+			$('#strategy-table').DataTable().draw();
+		}
+
+		// Reset all filters function
+		window.resetFilters = function () {
+			// Clear filters
+			for (const columnIndex in filters) {
+				$('#strategy-table').DataTable().column(columnIndex).search('');
+				delete filters[columnIndex];
+			}
+			$('#strategy-table').DataTable().draw();
+
+			// Remove 'active' class from all filter buttons
+			const buttons = document.querySelectorAll('.button.button-primary');
+			buttons.forEach(btn => btn.classList.remove('active'));
+		};
+	</script>
+
+	<!-- 
+╭────────────────────────╮
+|      MENU              |
+╰────────────────────────╯
+-->
+
+	<!-- Menu Divider row -->
+	<div class="divider" id="Menu" style="background:linear-gradient(to right,rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 0.8)); background-repeat: no-repeat; background-size: cover">
+		<div class="container">
+			<div class="twelve columns center-align">
+				<div class="divider-header">
+					<h2 class="inline-text">Menu of strategies</h2>
+				</div>
+				<h5>
+					This menu was informed by extensive community reflection, input and feedback from residents, employers, developers, financing experts, and policymakers. It is a starting point for officials to begin meaningful conversations about homes needs in their communities. These strategies are geared toward helping shape the future of homes to meet workforce demands across Upper Arlington.
+				</h5>
+			</div>
+
+			<!-- Filter panel -->
+			<div class="filter-panel">
+				<!-- housing type -->
+				<p class="filter-header">Filter by strategies by housing type</p>
+				<div class="filter-buttons" data-filter-group="housing-type">
+					<button class="button button-primary" data-column="2" data-value="Housing maintenance">
+						Housing maintenance
+					</button>
+					<button class="button button-primary" data-column="2" data-value="New construction">
+						New construction
+					</button>
+					<button class="button button-primary" data-column="2" data-value="All types of housing">
+						All types of housing
+					</button>
+				</div>
+
+				<!-- lead partner -->
+				<p class="filter-header">Filter by strategies by lead partner</p>
+				<div class="filter-buttons" data-filter-group="lead-partner">
+					<button class="button button-primary" data-column="3" data-value="Local">
+						Local
+					</button>
+					<button class="button button-primary" data-column="3" data-value="Regional and non-profit">
+						Regional and non-profit
+					</button>
+					<button class="button button-primary" data-column="3" data-value="State">
+						State
+					</button>
+					<button class="button button-primary" data-column="3" data-value="Federal">
+						Federal
+					</button>
+					<button class="button button-primary" data-column="3" data-value="Any type of lead partner">
+						Any type of lead partner
+					</button>
+				</div>
+
+				<!-- commitment -->
+				<p class="filter-header">Filter by strategies by commitment</p>
+				<div class="filter-buttons" data-filter-group="commitment">
+					<button class="button button-primary" data-column="4" data-value="Policies">
+						Policies
+					</button>
+					<button class="button button-primary" data-column="4" data-value="Best practices">
+						Best practices
+					</button>
+					<button class="button button-primary" data-column="4" data-value="Financing">
+						Financing
+					</button>
+				</div>
+
+				<!-- reset button -->
+				<div class="filter-buttons">
+					<button class="button button-primary" id="reset-filters">
+						Reset all filters
+					</button>
+				</div>
+			</div>
+
+			<!-- Table structure -->
+			<table id="strategy-table" class="display" style="width:100%">
+				<thead>
+					<tr>
+						<th>Theme</th>
+						<th>Strategy</th>
+						<th>Strategies by housing type</th>
+						<th>Strategies by lead partner</th>
+						<th>Strategies by commitment</th>
+					</tr>
+				</thead>
+			</table>
+
+			<script>
+				document.addEventListener('DOMContentLoaded', function () {
+					let table;
+					const activeFilters = new Map();
+
+					// Define category colors
+					const categoryColors = {
+						'housing-type': '#e6f3ff',    // Light blue
+						'lead-partner': '#fff0e6',    // Light orange
+						'commitment': '#e6ffe6'       // Light green
+					};
+
+					fetch('nkystrategies.json')
+						.then((response) => response.json())
+						.then((data) => {
+							table = $('#strategy-table').DataTable({
+								data: data,
+								columns: [
+									{ data: 'Theme' },
+									{
+										data: 'Strategy',
+										render: function (data, type, row) {
+											if (type === 'display') {
+												const parts = data.split(':');
+												const boldPart = parts[0] + ':';
+												const rest = parts.slice(1).join(':').replace(/\\n/g, '<br>');
+												return '<strong>' + boldPart + '</strong>' + rest;
+											}
+											return data;
+										}
+									},
+									{
+										data: 'Strategies by housing type',
+										createdCell: function (td, cellData, rowData, row, col) {
+											$(td).css('background-color', categoryColors['housing-type']);
+										}
+									},
+									{
+										data: 'Strategies by lead partner',
+										createdCell: function (td, cellData, rowData, row, col) {
+											$(td).css('background-color', categoryColors['lead-partner']);
+										}
+									},
+									{
+										data: 'Strategies by commitment',
+										createdCell: function (td, cellData, rowData, row, col) {
+											$(td).css('background-color', categoryColors['commitment']);
+										}
+									}
+								],
+								paging: false,
+								responsive: true
+							});
+
+							// Add click handlers for filter buttons
+							document.querySelectorAll('.filter-buttons .button-primary').forEach(button => {
+								button.addEventListener('click', function () {
+									const column = this.getAttribute('data-column');
+									const value = this.getAttribute('data-value');
+
+									// Toggle active state and filter
+									if (this.classList.contains('active')) {
+										// Remove filter
+										this.classList.remove('active');
+										activeFilters.delete(column);
+										table.column(column).search('').draw();
+									} else {
+										// Remove active class from other buttons in the same group
+										const group = this.closest('[data-filter-group]');
+										if (group) {
+											group.querySelectorAll('.button-primary.active').forEach(btn => {
+												btn.classList.remove('active');
+											});
+										}
+
+										// Apply new filter
+										this.classList.add('active');
+										activeFilters.set(column, value);
+										table.column(column).search(value).draw();
+									}
+								});
+							});
+
+							// Reset filters
+							document.getElementById('reset-filters').addEventListener('click', function () {
+								// Clear all active states
+								document.querySelectorAll('.button-primary.active').forEach(button => {
+									button.classList.remove('active');
+								});
+
+								// Clear all filters
+								activeFilters.clear();
+								table.search('').columns().search('').draw();
+							});
+						});
+				});
+			</script>
+
+			<style>
+				.filter-panel {
+					margin: 20px 0;
+				}
+
+				.filter-header {
+					margin: 0;
+					font-size: 1rem;
+					font-weight: 400;
+					margin-bottom: 5px;
+				}
+
+				.filter-buttons {
+					margin-bottom: 1rem;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					gap: 8px;
+					/* Reduced gap */
+				}
+
+				/* Button styles for each category */
+				[data-filter-group="housing-type"] .button-primary {
+					background-color: #e6f3ff;
+					color: #333;
+					border: 1px solid #ccc;
+					padding: 5px 10px;
+					/* Reduced padding */
+					font-size: 0.9rem;
+					/* Slightly smaller font */
+				}
+
+				[data-filter-group="lead-partner"] .button-primary {
+					background-color: #fff0e6;
+					color: #333;
+					border: 1px solid #ccc;
+					padding: 5px 10px;
+					font-size: 0.9rem;
+				}
+
+				[data-filter-group="commitment"] .button-primary {
+					background-color: #e6ffe6;
+					color: #333;
+					border: 1px solid #ccc;
+					padding: 5px 10px;
+					font-size: 0.9rem;
+				}
+
+				/* Active state styling */
+				.button.button-primary.active {
+					border: 2px solid #000 !important;
+					font-weight: bold;
+				}
+
+				/* Reset button styling */
+				#reset-filters {
+					background-color: #f8f9fa;
+					color: #333;
+					border: 1px solid #ccc;
+					padding: 5px 10px;
+					font-size: 0.9rem;
+				}
+
+				/* Hover effects */
+				.button-primary:hover {
+					opacity: 0.9;
+					cursor: pointer;
+				}
+
+				@media (max-width: 750px) {
+					.filter-buttons {
+						flex-direction: column;
+						align-items: flex-start;
+					}
+				}
+
+				/* Table header styling */
+				#strategy-table thead th:nth-child(3) {
+					background-color: #e6f3ff;
+				}
+
+				#strategy-table thead th:nth-child(4) {
+					background-color: #fff0e6;
+				}
+
+				#strategy-table thead th:nth-child(5) {
+					background-color: #e6ffe6;
+				}
+			</style>
+		</div>
+	</div>
 
 	<!-- 
 ╭────────────────────────╮
@@ -472,6 +805,10 @@
 	</div>
 	<div class="chip-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; margin-top: 4%; margin-bottom: 4%;">
 		<p>Thank you for reading!</p>
+		<a href="Upper Arlington Housing Strategies.pdf">
+			<button class="button-primary">
+				<span class="fa fa-file"></span> Download <b>HOME FOR ALL</b>
+			</button>
 		</a>
 	</div>
 	<!-- 
