@@ -650,6 +650,33 @@ figcaption {
   letter-spacing: 0;
 }
 
+/* Mobile header adjustments */
+@media (max-width: 750px) {
+  h1 {
+    /* Original size: 4.25rem; Adjusted size for mobile */
+    font-size: 3rem;
+  }
+  h2 {
+    /* Original size: 3.75rem; Adjusted size for mobile */
+    font-size: 2.5rem;
+  }
+  h3 {
+    /* Original size: 3.25rem; Adjusted size for mobile */
+    font-size: 2.2rem;
+  }
+  h4 {
+    /* Original size: 2rem; Adjusted size for mobile */
+    font-size: 1.75rem;
+  }
+  h5 {
+    /* Original size: 1.3rem; Adjusted size for mobile */
+    font-size: 1.2rem;
+  }
+  h6 {
+    /* Original size: 1.2rem; Adjusted size for mobile */
+    font-size: 1rem;
+  }
+}
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
