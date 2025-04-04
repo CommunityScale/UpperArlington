@@ -103,7 +103,7 @@ Table of contents
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: normal;
-  padding: 50px 0;
+  padding: 10px 0;
   margin-top: 0px;
 }
 
@@ -582,57 +582,53 @@ h1 {
   color: #252C31;
 }
 
+/* Common styles for all headings */
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Gloock", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-weight: 900;
-  color: #252C31;
+  font-optical-sizing: auto; /* Apply optical sizing where available */
+  font-style: normal;         /* Ensure normal font style */
+  color: #252C31;           /* Set text color */
 }
 
+/* h2 styles */
 h2 {
-  font-size: 3.75rem;
-  line-height: 1;
-  letter-spacing: -.1rem;
-  font-weight: 600;
+  font-family: "Gloock", serif; /* Keep Gloock font for h2 */
+  font-weight: 600;            /* Set specific weight for h2 */
+  font-size: 3.75rem;          /* Set font size */
+  line-height: 1;              /* Set line height */
+  letter-spacing: -.1rem;      /* Adjust letter spacing */
 }
 
-h3 {
-  font-size: 3.25rem;
-  line-height: 1;
-  letter-spacing: -.1rem;
-  font-weight: 400;
-}
-
-h4 {
-  font-size: 2rem;
-  line-height: 1.35;
-  letter-spacing: -.02rem;
-  font-weight: 800;
-}
-
-h5 {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1.3rem;
-  line-height: 1.45;
-  letter-spacing: 0;
-}
-
+/* Common font styles for h3, h4, h5, h6 */
+h3,
+h4,
+h5,
 h6 {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.2rem;
-  line-height: 1.45;
-  letter-spacing: 0;
+  font-family: "Roboto", sans-serif; /* Use Roboto font */
+  font-weight: 800;                 /* Set to Extra Bold weight */
+}
+
+/* h3 specific size/spacing */
+h3 {
+  font-size: 2rem;
+}
+
+/* h4 specific size/spacing */
+h4 {
+  font-size: 1.4rem;
+}
+
+/* h5 specific size/spacing */
+h5 {
+  font-size: 1.1rem;
+}
+
+/* h6 specific size/spacing */
+h6 {
+  font-size: 1rem;
 }
 
 p {
