@@ -577,9 +577,9 @@ h1 {
   font-family: "Gloock", serif;
   font-size: 4.25rem;
   line-height: 1;
-  letter-spacing: -.18rem;
+  letter-spacing: -.15rem;
   font-weight: 600;
-  color: #252C31;
+  color: black;
 }
 
 /* Common styles for all headings */
@@ -590,7 +590,7 @@ h5,
 h6 {
   font-optical-sizing: auto; /* Apply optical sizing where available */
   font-style: normal;         /* Ensure normal font style */
-  color: #252C31;           /* Set text color */
+  color:  black;           /* Set text color */
 }
 
 /* h2 styles */
@@ -599,7 +599,7 @@ h2 {
   font-weight: 600;            /* Set specific weight for h2 */
   font-size: 3.75rem;          /* Set font size */
   line-height: 1;              /* Set line height */
-  letter-spacing: -.1rem;      /* Adjust letter spacing */
+  letter-spacing: -.05rem;      /* Adjust letter spacing */
 }
 
 /* Common font styles for h3, h4, h5, h6 */
