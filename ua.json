@@ -1,0 +1,74 @@
+[
+    {
+        "column1": "Household income % of median",
+        "column2": "<50%",
+        "column3": "50-80%",
+        "column4": "80-120%",
+        "column5": "120-150%",
+        "column6": "150-190%",
+        "column7": ">190%"
+    },
+    {
+        "column1": "Total households (2025)",
+        "column2": 1924,
+        "column3": 1772,
+        "column4": 1867,
+        "column5": 1302,
+        "column6": 1698,
+        "column7": 5826
+    },
+    {
+        "column1": "Monthly affordable housing costs",
+        "column2": "<$1,250",
+        "column3": "<$2,000",
+        "column4": "<$3,000",
+        "column5": "<$3,750",
+        "column6": "<$5,000",
+        "column7": ">$5,000"
+    },
+    {
+        "column1": "Affordable purchase price",
+        "column2": 136000,
+        "column3": "<$217,000",
+        "column4": "<$333,000",
+        "column5": "<$417,000",
+        "column6": "<$560,000",
+        "column7": ">$560,000"
+    },
+    {
+        "column1": "Rate of homeownership",
+        "column2": 0,
+        "column3": 0.23,
+        "column4": 0.31,
+        "column5": 0.46,
+        "column6": 0.62,
+        "column7": 0.64
+    },
+    {
+        "column1": "Average bedrooms for recent movers",
+        "column2": 2,
+        "column3": 2.4,
+        "column4": 2.7,
+        "column5": 2.9,
+        "column6": 3.1,
+        "column7": 3.2
+    },
+    {
+        "column1": "Average age householder",
+        "column2": 60,
+        "column3": 56,
+        "column4": 54,
+        "column5": 53,
+        "column6": 54,
+        "column7": 52
+    },
+    {
+        "column1": "Average income earners per household",
+        "column2": 0.4,
+        "column3": 0.9,
+        "column4": 1.4,
+        "column5": 1.7,
+        "column6": 1.8,
+        "column7": 1.8
+    }
+]
