@@ -1,21 +1,12 @@
 [
     {
-        "column1": "Household income % of median",
-        "column2": "<50%",
-        "column3": "50-80%",
-        "column4": "80-120%",
-        "column5": "120-150%",
-        "column6": "150-190%",
-        "column7": ">190%"
-    },
-    {
         "column1": "Total households (2025)",
-        "column2": 1924,
-        "column3": 1772,
-        "column4": 1867,
-        "column5": 1302,
-        "column6": 1698,
-        "column7": 5826
+        "column2": "1,924",
+        "column3": "1,772",
+        "column4": "1,867",
+        "column5": "1,302",
+        "column6": "1,698",
+        "column7": "5,826"
     },
     {
         "column1": "Monthly affordable housing costs",
@@ -28,12 +19,12 @@
     },
     {
         "column1": "Affordable purchase price",
-        "column2": 136000,
-        "column3": "<$217,000",
-        "column4": "<$333,000",
-        "column5": "<$417,000",
-        "column6": "<$560,000",
-        "column7": ">$560,000"
+        "column2": "<$136K",
+        "column3": "<$217K",
+        "column4": "<$333K",
+        "column5": "<$417K",
+        "column6": "<$560K",
+        "column7": ">$560K"
     },
     {
         "column1": "Rate of homeownership",
