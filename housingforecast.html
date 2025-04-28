@@ -54,7 +54,7 @@
 	<!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/cs-template.css">
+	<link rel="stylesheet" href="css/hf.css">
 
 	<!-- Fonts / icons / table
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -165,37 +165,40 @@
 	<!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-	<!-- Sticky header -->
-	<div class="sticky">
-		<div class="topnav">
-			<div class="logo-and-menu">
-				<p class="inline-text">
-					<img src="images/client/UA-bear-white.png" alt="Upper Arlington" class="inline-logo">
-
-
-					<span class="title"><B>Housing Forecast</B></span>
-				</p>
-				<div class="nav-options">
-					<div class="desktop-pages">
-						<!-- Links must be added here for desktop -->
-						<a href="#Top"><span class="fa fa-arrow-up"></span> Top</a>
-						<a href="index.html">Home</a>
-					</div>
-					<div id="clickDiv" class="mobile-menu-icon">
-						<a class="menu-icon">
-							<i class="fa fa-bars"></i>
-						</a>
-					</div>
-				</div>
-
-			</div>
-			<div id="targetDiv" class="">
-				<!-- Links must be added here again for mobile -->
-				<a href="#Top"><span class="fa fa-arrow-up"></span> Top</a>
-				<a href="index.html">Home</a>
-			</div>
-		</div>
-	</div>
+<!-- Sticky header -->
+<div class="sticky">
+    <div class="topnav">
+        <div class="logo-and-menu">
+            <p class="inline-text">
+                <img src="images/communityscale-white-padding.svg" alt="CommunityScale" class="inline-logo">
+                <span class="title"><B>Housing Forecast</B></span>
+            </p>
+            <div class="nav-options">
+                <div class="desktop-pages">
+                    <!-- Search input and feedback button for desktop -->
+                    <div class="search-container">
+                        <input type="text" placeholder="Search..." class="search-input">
+                        <button class="search-button"><i class="fa fa-search"></i></button>
+                    </div>
+                    <button class="feedback-button" onclick="window.location.href='mailto:nels@communityscale.com?subject=Feedback%20on%20Housing%20Forecast'">Feedback</button>
+                </div>
+                <div id="clickDiv" class="mobile-menu-icon">
+                    <a class="menu-icon">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="targetDiv" class="">
+            <!-- Search input and feedback button for mobile -->
+            <div class="search-container-mobile">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-button"><i class="fa fa-search"></i></button>
+            </div>
+            <button class="feedback-button" onclick="window.location.href='mailto:nels@communityscale.com?subject=Feedback%20on%20Housing%20Forecast'">Feedback</button>
+        </div>
+    </div>
+</div>
 
 	<!-- Cover banner -->
 
@@ -211,7 +214,7 @@
 		<div class="container hero">
 		  <h1>
 			<span style="font-size:3rem;">
-			  Upper Arlington <span style="font-weight:normal;">Housing Forecast</span>
+			  Upper Arlington, Ohio
 			</span>
 		  </h1>
 			<style>
