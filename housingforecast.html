@@ -199,10 +199,68 @@
 
 	<!-- Cover banner -->
 
-	<div class="cover" id="Top" style="background:linear-gradient(to right,rgb(17, 35, 54,.8) 60%,rgba(17, 35, 54,.5)), url(images/client/cover-background.png) no-repeat center center; background-size: cover;">
-
-		<div class="container" style="margin-top: 0;">
-			<h1><span style="font-size: 3rem;">Upper Arlington <span style="font-weight: normal;">Housing Forecast</span></span></h1>
+	<div class="cover" id="Top">
+		<!-- Background layer -->
+		<iframe
+		  src="mapTitleCard.html"
+		  class="bg-frame"
+		  loading="lazy"
+		  aria-hidden="true"></iframe>
+	  
+		<!-- Foreground layer -->
+		<div class="container hero">
+		  <h1>
+			<span style="font-size:3rem;">
+			  Upper Arlington <span style="font-weight:normal;">Housing Forecast</span>
+			</span>
+		  </h1>
+			<style>
+				/* Compact table tweaks */
+				table.compact p {
+				  margin: 0;
+				  font-size: 0.8rem;
+				}
+				table.compact tr:last-child td {   /* new */
+				  border-bottom: none;             /* removes last border */
+				}
+			  </style>
+			  
+			  <table class="tr1 compact">
+				<tr>
+				  <td><p>2.51</p></td>
+				  <td><p>Average people per household</p></td>
+				</tr>
+				<tr>
+				  <td><p>$109,000</p></td>
+				  <td><p>Columbus HUD Area median income (2025)</p></td>
+				</tr>
+				<tr>
+				  <td><p>$155,523</p></td>
+				  <td><p>Upper Arlington median income (2025 est.)</p></td>
+				</tr>
+				<tr>
+				  <td><p>14,665</p></td>
+				  <td><p>Households (2025 est.)</p></td>
+				</tr>
+				<tr>
+				  <td><p>15,122</p></td>
+				  <td><p>Housing units</p></td>
+				</tr>
+				<tr>
+				  <td><p>83%</p></td>
+				  <td><p>Single-family detached structures</p></td>
+				</tr>
+				<tr>
+				  <td><p>$597,535</p></td>
+				  <td><p>Median home price (Mar 2025 – Zillow)</p></td>
+				</tr>
+				<tr>
+				  <td><p>40.6</p></td>
+				  <td><p>Median age</p></td>
+				</tr>
+			  </table>
+			  
+			  
 		</div>
 	</div>
 
