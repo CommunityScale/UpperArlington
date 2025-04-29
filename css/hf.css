@@ -192,7 +192,7 @@ Table of contents
 }
 
 .row {
-  margin: 20px 0;
+  margin: 0 0 0 0;
 }
 
 .container {
@@ -247,6 +247,25 @@ Table of contents
   color: black;
 }
 
+/* Extra breathing-room around footer text only */
+.footer p {
+  padding: 0.5rem 0;   /* top & bottom 0.5 rem, left & right 0 */
+  /* or, for equal padding on all sides:
+     padding: 0.5rem;
+  */
+}
+
+/* Footer-only link styling */
+.footer a {
+  color: #000;            /* black text */
+  text-decoration: none;  /* remove underline */
+}
+
+.footer a:hover,
+.footer a:focus {
+  text-decoration: underline;   /* optional: show underline on hover */
+}
+
 .cover p {
   color: white;
 }
@@ -272,7 +291,7 @@ Table of contents
   display: flex;
   align-items: center;
   border: 1px solid #c7c7c7;
-  margin: 8px 0 0 0;
+  margin: 0 0 0 0;
 }
 
 .insight h5 {
@@ -287,9 +306,6 @@ Table of contents
   margin: 8px 0 0 0;
 }
 
-.insight-box .columns {
-  margin-left: 2%;
-}
 
 /* Progress tracker section */
 .progress-tracker {
@@ -400,6 +416,23 @@ Table of contents
   border-collapse: collapse; /* Remove extra spacing */
   display: block; /* Ensure proper rendering */
   overflow-x: auto; /* Allow table to scroll horizontally */
+}
+
+/* Simple insight-style box for iframes */
+.iframe-block {
+  background: #fff;
+  border: 1px solid #c7c7c7;   /* same grey as insight-box */
+  margin: 8px 0 0;             /* mimic vertical spacing */
+}
+
+
+
+/* Make the iframe fill the box edge-to-edge */
+.iframe-block iframe {
+  display: block;              /* removes inline whitespace */
+  width: 100%;
+  height: 600px;                /* uses the HTML height attr */
+  border: none;                /* kills default frame */
 }
 
 
@@ -738,7 +771,8 @@ h6 {
 
 /* h3 specific size/spacing */
 h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: 300; 
 }
 
 /* h4 specific size/spacing */
@@ -759,6 +793,22 @@ h6 {
 p {
   margin-top: 0;
   font-family: "Roboto", sans-serif;
+}
+
+/* make the summary look like a link/button */
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+/* Optional flair: rotate icon when the details block is open */
+.income-details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.income-details[open] .fa-angle-right {
+  transform: rotate(90deg);
 }
 
 figcaption {
@@ -797,6 +847,13 @@ figcaption {
     /* Original size: 1.2rem; Adjusted size for mobile */
     font-size: 1rem;
   }
+}
+
+
+/* Insight-box heading squeeze */
+.insight-box h3 {
+  margin: 0 0 1rem;   /* no top margin, small bottom margin */
+  padding: 0;
 }
 
 /* Links
@@ -907,12 +964,7 @@ a:hover {
   flex-wrap: wrap;
 }
 
-/* .chip {
-  border-radius: 50px;
-  border: 2px solid #A4ADB7;
-  padding: 10px 15px;
-  margin: 10px;
-} */
+
 
 /* Images
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

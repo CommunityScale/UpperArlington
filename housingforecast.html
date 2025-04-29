@@ -64,97 +64,128 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://kit.fontawesome.com/b6b458829a.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
 
 
 	<!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="icon" type="image/png" href="images/favicon.png">
-<style>
-	table.dataTable thead th {
-		/* Default header style - will be overridden for colored cells */
-		text-align: center;
-		font-weight: bold;
-		border: 0px solid #aaa; /* Adjusted border for colored cells */
-		padding: 8px 6px; /* Slightly more padding */
-	}
+	<style>
+		table.dataTable thead th {
+			/* Default header style - will be overridden for colored cells */
+			text-align: center;
+			font-weight: bold;
+			border: 0px solid #aaa;
+			/* Adjusted border for colored cells */
+			padding: 8px 6px;
+			/* Slightly more padding */
+		}
 
-	#incomeTable th, #incomeTable td {
-    font-size: 0.8rem;
-}
+		#incomeTable th,
+		#incomeTable td {
+			font-size: 0.8rem;
+		}
 
-	/* --- NEW HEADER COLOR STYLES --- */
-	/* Colors sampled from the image provided */
+		/* --- NEW HEADER COLOR STYLES --- */
+		/* Colors sampled from the image provided */
 
-	/* First header cell (empty category label) */
-	table#incomeTable thead th:first-child {
-		 background-color: #f8f8f8; /* Keep it neutral */
-		 color: #333; /* Dark text */
-		 border-right: 0px solid #ccc;
-		 text-align: right;
-	}
+		/* First header cell (empty category label) */
+		table#incomeTable thead th:first-child {
+			background-color: #f8f8f8;
+			/* Keep it neutral */
+			color: #333;
+			/* Dark text */
+			border-right: 0px solid #ccc;
+			text-align: right;
+		}
 
-	/* <50% Header */
-	table#incomeTable thead th:nth-child(2) {
-		background-color: #568c9f; /* Dark Teal */
-		color: #ffffff; /* White text */
-	}
-	/* 50-80% Header */
-	table#incomeTable thead th:nth-child(3) {
-		background-color: #5ca4bc; /* Medium Blue */
-		color: #ffffff; /* White text */
-	}
-	/* 80-120% Header */
-	table#incomeTable thead th:nth-child(4) {
-		background-color: #58bbdb; /* Light Blue */
-		color: #ffffff; /* White text (adjust to #333 if contrast is low) */
-	}
-	/* 120-150% Header */
-	table#incomeTable thead th:nth-child(5) {
-		background-color: #ffecb7; /* Yellow/Gold */
-		color: #333333; /* Dark text */
-	}
-	/* 150-190% Header */
-	table#incomeTable thead th:nth-child(6) {
-		background-color: #ffd89c; /* Light Orange */
-		color: #333333; /* Dark text */
-	}
-	/* >190% Header */
-	table#incomeTable thead th:nth-child(7) {
-		background-color: #fbac47; /* Darker Orange */
-		color: #ffffff; /* White text */
-	}
-	/* --- END NEW HEADER COLOR STYLES --- */
+		/* <50% Header */
+		table#incomeTable thead th:nth-child(2) {
+			background-color: #568c9f;
+			/* Dark Teal */
+			color: #ffffff;
+			/* White text */
+		}
+
+		/* 50-80% Header */
+		table#incomeTable thead th:nth-child(3) {
+			background-color: #5ca4bc;
+			/* Medium Blue */
+			color: #ffffff;
+			/* White text */
+		}
+
+		/* 80-120% Header */
+		table#incomeTable thead th:nth-child(4) {
+			background-color: #58bbdb;
+			/* Light Blue */
+			color: #ffffff;
+			/* White text (adjust to #333 if contrast is low) */
+		}
+
+		/* 120-150% Header */
+		table#incomeTable thead th:nth-child(5) {
+			background-color: #ffecb7;
+			/* Yellow/Gold */
+			color: #333333;
+			/* Dark text */
+		}
+
+		/* 150-190% Header */
+		table#incomeTable thead th:nth-child(6) {
+			background-color: #ffd89c;
+			/* Light Orange */
+			color: #333333;
+			/* Dark text */
+		}
+
+		/* >190% Header */
+		table#incomeTable thead th:nth-child(7) {
+			background-color: #fbac47;
+			/* Darker Orange */
+			color: #ffffff;
+			/* White text */
+		}
+
+		/* --- END NEW HEADER COLOR STYLES --- */
 
 
-	table.dataTable tbody td {
-		text-align: center; /* Center align data cells */
-		padding: 6px;
-		border: 0px solid #eee; /* Light cell borders */
-	}
-	table.dataTable tbody td:first-child {
-		text-align: right; /* Left align the first column (labels) */
-		font-weight: normal;
-		background-color: #fdfdfd;
-		border-right: 0px solid #ccc;
-	}
-	/* Style the first data row to look like a sub-header */
-	table.dataTable tbody tr.header-data-row td { /* Use the specific class */
-		font-weight: bold;
-		background-color: #f5f5f5; /* Slightly darker background for the first row */
-	}
-	 /* Add some spacing */
-	.dataTables_wrapper {
-		 margin-top: 15px;
-	}
-	/* Basic table styling */
-	#incomeTable {
-		width: 100%;
-		border-collapse: collapse;
-	}
+		table.dataTable tbody td {
+			text-align: center;
+			/* Center align data cells */
+			padding: 6px;
+			border: 0px solid #eee;
+			/* Light cell borders */
+		}
 
-</style>
+		table.dataTable tbody td:first-child {
+			text-align: right;
+			/* Left align the first column (labels) */
+			font-weight: normal;
+			background-color: #fdfdfd;
+			border-right: 0px solid #ccc;
+		}
+
+		/* Style the first data row to look like a sub-header */
+		table.dataTable tbody tr.header-data-row td {
+			/* Use the specific class */
+			font-weight: bold;
+			background-color: #f5f5f5;
+			/* Slightly darker background for the first row */
+		}
+
+		/* Add some spacing */
+		.dataTables_wrapper {
+			margin-top: 15px;
+		}
+
+		/* Basic table styling */
+		#incomeTable {
+			width: 100%;
+			border-collapse: collapse;
+		}
+	</style>
 </head>
 
 <body>
@@ -165,105 +196,136 @@
 	<!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<!-- Sticky header -->
-<div class="sticky">
-    <div class="topnav">
-        <div class="logo-and-menu">
-            <p class="inline-text">
-                <img src="images/communityscale-white-padding.svg" alt="CommunityScale" class="inline-logo">
-                <span class="title"><B>Housing Forecast</B></span>
-            </p>
-            <div class="nav-options">
-                <div class="desktop-pages">
-                    <!-- Search input and feedback button for desktop -->
-                    <div class="search-container">
-                        <input type="text" placeholder="Search..." class="search-input">
-                        <button class="search-button"><i class="fa fa-search"></i></button>
-                    </div>
-                    <button class="feedback-button" onclick="window.location.href='mailto:nels@communityscale.com?subject=Feedback%20on%20Housing%20Forecast'">Feedback</button>
-                </div>
-                <div id="clickDiv" class="mobile-menu-icon">
-                    <a class="menu-icon">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div id="targetDiv" class="">
-            <!-- Search input and feedback button for mobile -->
-            <div class="search-container-mobile">
-                <input type="text" placeholder="Search..." class="search-input">
-                <button class="search-button"><i class="fa fa-search"></i></button>
-            </div>
-            <button class="feedback-button" onclick="window.location.href='mailto:nels@communityscale.com?subject=Feedback%20on%20Housing%20Forecast'">Feedback</button>
-        </div>
-    </div>
-</div>
+	<!-- Sticky header -->
+	<div class="sticky">
+		<div class="topnav">
+			<div class="logo-and-menu">
+				<p class="inline-text">
+					<img src="images/communityscale-white-padding.svg" alt="CommunityScale" class="inline-logo">
+					<span class="title"><B>Housing Forecast</B></span>
+				</p>
+				<div class="nav-options">
+					<div class="desktop-pages">
+						<!-- Search input and feedback button for desktop -->
+						<div class="search-container">
+							<input type="text" placeholder="Search..." class="search-input">
+							<button class="search-button"><i class="fa fa-search"></i></button>
+						</div>
+						<button class="feedback-button" onclick="window.location.href='mailto:nels@communityscale.com?subject=Feedback%20on%20Housing%20Forecast'">Feedback</button>
+					</div>
+					<div id="clickDiv" class="mobile-menu-icon">
+						<a class="menu-icon">
+							<i class="fa fa-bars"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="targetDiv" class="">
+				<!-- Search input and feedback button for mobile -->
+				<div class="search-container-mobile">
+					<input type="text" placeholder="Search..." class="search-input">
+					<button class="search-button"><i class="fa fa-search"></i></button>
+				</div>
+				<button class="feedback-button" onclick="window.location.href='mailto:nels@communityscale.com?subject=Feedback%20on%20Housing%20Forecast'">Feedback</button>
+			</div>
+		</div>
+	</div>
 
 	<!-- Cover banner -->
 
 	<div class="cover" id="Top">
 		<!-- Background layer -->
-		<iframe
-		  src="mapTitleCard.html"
-		  class="bg-frame"
-		  loading="lazy"
-		  aria-hidden="true"></iframe>
-	  
+		<iframe src="mapTitleCard.html" class="bg-frame" loading="lazy" aria-hidden="true"></iframe>
+
 		<!-- Foreground layer -->
 		<div class="container hero">
-		  <h1>
-			<span style="font-size:3rem;">
-			  Upper Arlington, Ohio
-			</span>
-		  </h1>
+			<h1>
+				<span style="font-size:3rem;">
+					Upper Arlington, Ohio
+				</span>
+			</h1>
 			<style>
 				/* Compact table tweaks */
 				table.compact p {
-				  margin: 0;
-				  font-size: 0.8rem;
+					margin: 0;
+					font-size: 0.8rem;
 				}
-				table.compact tr:last-child td {   /* new */
-				  border-bottom: none;             /* removes last border */
+
+				table.compact tr:last-child td {
+					/* new */
+					border-bottom: none;
+					/* removes last border */
 				}
-			  </style>
-			  
-			  <table class="tr1 compact">
+			</style>
+
+			<table class="tr1 compact">
 				<tr>
-				  <td><p>2.51</p></td>
-				  <td><p>Average people per household</p></td>
+					<td>
+						<p>2.51</p>
+					</td>
+					<td>
+						<p>Average people per household</p>
+					</td>
 				</tr>
 				<tr>
-				  <td><p>$109,000</p></td>
-				  <td><p>Columbus HUD Area median income (2025)</p></td>
+					<td>
+						<p>$109,000</p>
+					</td>
+					<td>
+						<p>Columbus HUD Area median income (2025)</p>
+					</td>
 				</tr>
 				<tr>
-				  <td><p>$155,523</p></td>
-				  <td><p>Upper Arlington median income (2025 est.)</p></td>
+					<td>
+						<p>$155,523</p>
+					</td>
+					<td>
+						<p>Upper Arlington median income (2025 est.)</p>
+					</td>
 				</tr>
 				<tr>
-				  <td><p>14,665</p></td>
-				  <td><p>Households (2025 est.)</p></td>
+					<td>
+						<p>14,665</p>
+					</td>
+					<td>
+						<p>Households (2025 est.)</p>
+					</td>
 				</tr>
 				<tr>
-				  <td><p>15,122</p></td>
-				  <td><p>Housing units</p></td>
+					<td>
+						<p>15,122</p>
+					</td>
+					<td>
+						<p>Housing units</p>
+					</td>
 				</tr>
 				<tr>
-				  <td><p>83%</p></td>
-				  <td><p>Single-family detached structures</p></td>
+					<td>
+						<p>83%</p>
+					</td>
+					<td>
+						<p>Single-family detached structures</p>
+					</td>
 				</tr>
 				<tr>
-				  <td><p>$597,535</p></td>
-				  <td><p>Median home price (Mar 2025 – Zillow)</p></td>
+					<td>
+						<p>$597,535</p>
+					</td>
+					<td>
+						<p>Median home price (March 2025)</p>
+					</td>
 				</tr>
 				<tr>
-				  <td><p>40.6</p></td>
-				  <td><p>Median age</p></td>
+					<td>
+						<p>40.6</p>
+					</td>
+					<td>
+						<p>Median age</p>
+					</td>
 				</tr>
-			  </table>
-			  
-			  
+			</table>
+
+
 		</div>
 	</div>
 
@@ -273,227 +335,265 @@
 ╰────────────────────────╯
 -->
 
-	<div class="divider" id="Overview" style="margin-top: 0%; padding-top: 0; margin-bottom: 0%; padding-bottom: 0;">
-		<div class="container" style="margin-bottom: 0%; padding-bottom: 0;">
 
-			<div class="row insight-box">
+	<div class="container">
+
+		<!-- 01	MONTHLY GAP CHART -->
+		<div class="row insight-box">
+			<div class="row">
+				<div class="twelve columns">
+					<h3>How affordable is Upper Arlington?</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="four columns">
+					<p>Time series model inputs for affordability with current figures: <br>6.67% interest rate (FRED); <br>0.35% Property insurance rate; <br>1.00% Mortgage insurance rate; <br>2.68% property tax rate; <br>30 years loan term; <br>11.6% Down payment regional average; <br>30% Household income for ownership costs; <br>$589,082 Estimated median home value for the municipality; <br>$159,371 ACS 5-year median household income.</p>
+				</div>
 				<div class="eight columns">
 					<iframe title="How affordable is Upper Arlington?" aria-label="Interactive line chart" id="datawrapper-chart-f4d3i" src="https://datawrapper.dwcdn.net/f4d3i/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="491" data-external="1"></iframe>
 					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
 					</script>
 				</div>
-				<div class="four columns" style="margin-top: 20px">
-					<figcaption style="font-size: 0.8rem; margin-top: 0.5rem;">Time series model inputs for affordability with current figures: <br>6.67% interest rate (FRED); <br>0.35% Property insurance rate; <br>1.00% Mortgage insurance rate; <br>2.68% property tax rate; <br>30 years loan term; <br>11.6% Down payment regional average; <br>30% Household income for ownership costs; <br>$589,082 Zillow Home Value Index (ZHVI) for the municipality; <br>$159,371 ACS 5-year median household income.</figcaption>
+			</div>
+		</div>
+
+		<!-- 02	ANNUAL LAYER FORECAST -->
+		<div class="row insight-box">
+			<div class="row">
+				<div class="twelve columns">
+					<h3>How is Upper Arlington's population changing?</h3>
 				</div>
 			</div>
-
-			<div class="row insight-box">
-				<div class="twelve columns" style="margin: 0; padding: 0;">
-					<h3 style="margin-bottom: 0; padding: 0; margin-top: 25px;">Household growth and associated housing supply</h3>
+			<div class="row">
+				<div class="four columns">
+					<p>This analysis further breaks down the overall rate of household growth by household income. In this case, household incomes are grouped by their percent of HUD’s Area Median Income, which is $103,300 (Columbus, OH HUD Metro FMR Area 2025).</p>
 				</div>
-				<div class="six columns" style="margin-top: 20px">
-					<iframe title="Household growth forecast alternatives" aria-label="Interactive line chart" id="datawrapper-chart-zbGLJ" src="https://datawrapper.dwcdn.net/zbGLJ/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="481" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
-					</script>
-				</div>
-
-				<div class="six columns" style="margin-top: 20px">
+				<div class="eight columns">
 					<iframe title="Household growth by household income" aria-label="Interactive area chart" id="datawrapper-chart-D0DYP" src="https://datawrapper.dwcdn.net/D0DYP/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="461" data-external="1"></iframe>
 					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
 					</script>
 				</div>
-				<div class="twelve columns" style="margin: 0; padding: 0;">
-					<h4 style="margin-bottom: 0; padding: 0; margin-top: 25px;">Household groups by % of area median income ($109K)</h4>
-				</div>
-				<div class="twelve columns" style="margin: 0; padding: 0;">
-					<div class="scrollable-container">
-						<table id="incomeTable" class="display" style="width:100%">
-							<thead>
-								<tr>
-									<th>Household income % of area median</th>
-									<th>&lt;50%</th>
-									<th>50-80%</th>
-									<th>80-120%</th>
-									<th>120-150%</th>
-									<th>150-190%</th>
-									<th>&gt;190%</th>
-								</tr>
-							</thead>
-							<tbody>
-								</tbody>
-						</table>
-					</div>
-					<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-					<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-	
-					<script>
-					$(document).ready(function() {
-						$('#incomeTable').DataTable({
-							// ... your DataTable options ...
-							"ajax": {
-								"url": "ua.json",
-								"dataSrc": ""
-							},
-							"columns": [
-								{ "data": "column1" },
-								{ "data": "column2" },
-								{ "data": "column3" },
-								{ "data": "column4" },
-								{ "data": "column5" },
-								{ "data": "column6" },
-								{ "data": "column7" }
-							],
-							"paging": false,
-							"searching": false,
-							"ordering": false,
-							"info": false,
-							"columnDefs": [
-								{ "targets": 0, "className": "category-label" }
-							],
-							 "createdRow": function( row, data, dataIndex ) {
-								// Add a class to the first data row (index 0) for specific styling
-								// Check if it's the first row (the one containing '% of median')
-								if ( dataIndex === 0 ) {
-								  $(row).addClass( 'header-data-row' ); // Apply class for styling
-								}
-							}
-						});
-					});
-					</script>
-				</div>			
 			</div>
+			<div class="row">
 
-			<div class="row insight-box">
 				<div class="twelve columns">
-					<h3 style="padding: 0; margin: 0%;">Additional housing supply potential 2025-2050</h3>
-					<p>
-					<figcaption style="font-size: 0.9rem; margin-bottom: 0.1rem; margin-top: 0; padding-top: 0;">The following calculation translates household growth to a target for housing supply and related housing production. This calculation takes into account several adjustments intended to relieve underlying market pressures such as pent up demand.</figcaption>
+
+					<details class="income-details">
+						<summary>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							Learn more about household income groups
+						</summary>
+
+						<div class="scrollable-container">
+							<table id="incomeTable" class="display" style="width:100%">
+								<thead>
+									<tr>
+										<th>Household income % of area median</th>
+										<th>&lt;50%</th>
+										<th>50-80%</th>
+										<th>80-120%</th>
+										<th>120-150%</th>
+										<th>150-190%</th>
+										<th>&gt;190%</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+						<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+						<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+						<script>
+							$(document).ready(function () {
+								$('#incomeTable').DataTable({
+									// ... your DataTable options ...
+									"ajax": {
+										"url": "ua.json",
+										"dataSrc": ""
+									},
+									"columns": [
+										{ "data": "column1" },
+										{ "data": "column2" },
+										{ "data": "column3" },
+										{ "data": "column4" },
+										{ "data": "column5" },
+										{ "data": "column6" },
+										{ "data": "column7" }
+									],
+									"paging": false,
+									"searching": false,
+									"ordering": false,
+									"info": false,
+									"columnDefs": [
+										{ "targets": 0, "className": "category-label" }
+									],
+									"createdRow": function (row, data, dataIndex) {
+										// Add a class to the first data row (index 0) for specific styling
+										// Check if it's the first row (the one containing '% of median')
+										if (dataIndex === 0) {
+											$(row).addClass('header-data-row'); // Apply class for styling
+										}
+									}
+								});
+							});
+						</script>
+
+					</details>
+
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 03	HOUSING STOCK-->
+		<div class="row insight-box">
+			<div class="row">
+				<div class="twelve columns">
+					<h3>What is the existing and recently built housing stock?</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="four columns">
+					<p>Households may have different structure type preferences depending on characteristics such as household size, income, employment, presence of children, age of individuals, and lifestyle choices. Understanding the housing stock in corresponding terms helps assess how well existing units align with existing households' ideals.
 					</p>
+				</div>
+				<div class="eight columns">
+					<iframe title="Bedrooms" aria-label="Stacked Bars" id="datawrapper-chart-9vY0Q" src="https://datawrapper.dwcdn.net/9vY0Q/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="206" data-external="1"></iframe>
+					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+					</script>
+					<iframe title="Structure type" aria-label="Stacked Bars" id="datawrapper-chart-RhVKN" src="https://datawrapper.dwcdn.net/RhVKN/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="188" data-external="1"></iframe>
+					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+					</script>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 04	DEMAND -->
+		<div class="row insight-box">
+			<div class="row">
+				<div class="twelve columns">
+					<h3>What is the housing demand in Upper Arlington for 2025-2050</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="four columns">
+					<p>The following calculation translates household growth to a target for housing supply and related housing production. This calculation takes into account several adjustments intended to relieve underlying market pressures such as pent up demand.
+					</p>
+				</div>
+				<div class="eight columns">
 					<p>
 						<a href="./images/client/UA-HF-Supply.png" target="_blank">
 							<img src="./images/client/UA-HF-Supply.png" class="image-cover" height="auto" width="100%" title="CommunityScale" alt="CommunityScale">
 						</a>
 					</p>
 				</div>
-			</div>
 
-			<div class="row insight-box">
+			</div>
+		</div>
+
+		<!-- 05 MAP -->
+		<div class="iframe-block">
+			<iframe src="mapstable.html" title="Housing Map & Table" loading="lazy" height="800"></iframe>
+		</div>
+
+
+		<!-- 06	CHARACTERISTICS -->
+		<div class="row insight-box">
+			<div class="row">
 				<div class="twelve columns">
-					<h3 style="padding: 0; margin: 0%;">Characteristics per household income group</h3>
-					<p>
-					<figcaption style="font-size: 0.9rem; margin-bottom: 0.1rem; margin-top: 0; padding-top: 0;">The following calculation translates household growth to a target for housing supply and related housing production. This calculation takes into account several adjustments intended to relieve underlying market pressures such as pent up demand.</figcaption>
-					</p>
+					<h3>What are Upper Arlington's household characteristics?</h3>
 				</div>
-				<div class="six columns" style="margin-top: 20px">
+			</div>
+			<div class="row">
+				<div class="six columns">
 					<iframe title="Race" aria-label="Stacked Bars" id="datawrapper-chart-Vdw9j" src="https://datawrapper.dwcdn.net/Vdw9j/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="316" data-external="1"></iframe>
 					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
 					</script>
 				</div>
-				<div class="six columns" style="margin-top: 20px">
+				<div class="six columns">
 					<iframe title="Household type" aria-label="Stacked Bars" id="datawrapper-chart-KP6QY" src="https://datawrapper.dwcdn.net/KP6QY/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="299" data-external="1"></iframe>
 					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
 					</script>
 				</div>
-				<div class="six columns" style="margin-top: 20px">
+			</div>
+			<div class="row">
+				<div class="six columns">
 					<iframe title="Age of householder" aria-label="Stacked Bars" id="datawrapper-chart-Nk8Ge" src="https://datawrapper.dwcdn.net/Nk8Ge/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="299" data-external="1"></iframe>
 					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
 					</script>
 				</div>
-				<div class="six columns" style="margin-top: 20px">
-					<iframe title="Number of earners" aria-label="Stacked Bars" id="datawrapper-chart-Gv1a0" src="https://datawrapper.dwcdn.net/Gv1a0/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="299" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
-					</script>
-				</div>
-				<div class="six columns" style="margin-top: 20px">
-					<iframe title="Cost burden" aria-label="Stacked Bars" id="datawrapper-chart-eu1uu" src="https://datawrapper.dwcdn.net/eu1uu/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="237" data-external="1"></iframe>
-					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
-					</script>
-				</div>
-				<div class="six columns" style="margin-top: 20px">
-					<figcaption style="font-size: 0.8rem; margin-top: 0.5rem;">Cost burdened households pay more than 30% of their income on housing costs. Severely cost burdened households pay more than 50% of their income. Housing costs for renters include lease rent and utilities and for homeowners includes mortgage costs, property taxes, insurance, utilities, and any condo fees.</figcaption>
-				</div>
-			</div>
-
-
-			
-
-			<div class="row insight-box">
-				<div class="twelve columns">
-					<h3 style="padding: 0; margin: 0%;">Preferences per household income group</h3>
-					<p>
-					<figcaption style="font-size: 0.9rem; margin-bottom: 0.1rem; margin-top: 0; padding-top: 0;">The following preferences are derived from regional data for recent movers.</figcaption>
-					</p>
-				</div>
-				<div class="six columns" style="margin-top: 20px">
-					<iframe title="Units in structure" aria-label="Stacked Bars" id="datawrapper-chart-rt7WA" src="https://datawrapper.dwcdn.net/rt7WA/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="299" data-external="1"></iframe>
-					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
-					</script>
-				</div>
-				<div class="six columns" style="margin-top: 20px">
-					<iframe title="Bedrooms" aria-label="Stacked Bars" id="datawrapper-chart-aYcag" src="https://datawrapper.dwcdn.net/aYcag/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="299" data-external="1"></iframe>
+				<div class="six columns">
+					<iframe title="Number of earners" aria-label="Stacked Bars" id="datawrapper-chart-Gv1a0" src="https://datawrapper.dwcdn.net/Gv1a0/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="299" data-external="1"></iframe>
 					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
 					</script>
 				</div>
 			</div>
-
-			<div class="row insight-box">
-				<div class="twelve columns">
-					<h3 style="padding: 0; margin: 0%;">Existing structures</h3>
-					<p>
-					<figcaption style="font-size: 0.9rem; margin-bottom: 0.1rem; margin-top: 0; padding-top: 0;">Information on the existing housing stock.</figcaption>
-					</p>
-				</div>
-				<div class="six columns" style="margin-top: 20px">
-					<iframe title="Structure type" aria-label="Stacked Bars" id="datawrapper-chart-RhVKN" src="https://datawrapper.dwcdn.net/RhVKN/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="251" data-external="1"></iframe>
-					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
-					</script>
-				</div>
-				<div class="six columns" style="margin-top: 20px">
-					<iframe title="Bedrooms" aria-label="Stacked Bars" id="datawrapper-chart-HL2YC" src="https://datawrapper.dwcdn.net/HL2YC/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="218" data-external="1"></iframe>
-					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
-					</script>
-				</div>
-			</div>
-<!-- 
-			<div class="row insight-box">
-				<div class="eight columns">
-					<iframe title="Share of population by age" aria-label="Interactive area chart" id="datawrapper-chart-T58Kl" src="https://datawrapper.dwcdn.net/T58Kl/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="424" data-external="1"></iframe>
-					<script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
-					</script>
-				</div>
-				<div class="four columns" style="margin-top: 20px">
-					<figcaption style="font-size: 0.8rem; margin-top: 0.5rem;">This chart illustrates trends in population by age cohort, both historic and projected. The projection is based on recent trends extended. Depending on economic, policy, and other conditions, the future age distribution may vary over time. </figcaption>
-				</div>
-			</div>
-––––– -->
-
 		</div>
+	</div>
 
-		<!-- 
+	<!-- 
 ╭────────────────────────╮
 |    Footer              |
 ╰────────────────────────╯
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-		<div class="footer" style="background:linear-gradient(to right,white 80%,rgba(34, 124, 157,.1)); margin-top: 50px;">
-			<div class="container">
-				<div class="unresponsive" style="margin-bottom: 30px;">
-					<div class="content-size"><a href="https://upperarlingtonoh.gov/"><img class="no-rounded-edges" src="./images/client/UA-logo.png" height="auto" width="30px" title="CommunityScale" alt="CommunityScale"></a></div>
-					<div class="fill-space">
-						<p class=""><a href="https://upperarlingtonoh.gov/" target="_blank">The City of Upper Arlington</a> is a dynamic community, made successful by the citizens, businesses and civic groups who support the values and traditions.
-						</p>
-					</div>
-				</div>
-				<div class="unresponsive">
-					<div class="content-size"><a href="http://communityscale.io"><img class="no-rounded-edges" src="./images/CommunityScale-logo.png" height="auto" width="30px" title="CommunityScale" alt="CommunityScale"></a></div>
-					<div class="fill-space">
-						<p class=""><a href="http://communityscale.io" target="blank">CommunityScale</a> is a pioneering urban planning and spatial data analysis company serving clients across the United States. Follow us on <a href="https://www.linkedin.com/company/communityscale">LinkedIn</a> and <a href="https://twitter.com/CommunityScale">X</a>.</p>
-					</div>
+	<div class="footer" style="background:white; margin-top: 10px;">
+		<div class="container">
+			<div class="row">
+				<div class="twelve columns">
+					<p>Housing Forecast <i class="fa fa-angle-right" aria-hidden="true"></i> United States <i class="fa fa-angle-right" aria-hidden="true"></i> Ohio <i class="fa fa-angle-right" aria-hidden="true"></i> Franklin County <i class="fa fa-angle-right" aria-hidden="true"></i> Upper Arlington</p>
 				</div>
 			</div>
+			<div class="row">
+				<div class="twelve columns">
+					<hr style="margin: 12px 0px 8px 0px; border: 1px solid #ccc;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="four columns">
+					<p><strong>Support</strong></p>
+					<p><a href="mailto:nels@communityscale.com">Contact</a></p>
+					<p><a href="https://github.com/CommunityScale/UpperArlington" target="_blank">View code on Github</a></p>
+				</div>
+				<div class="four columns">
+					<p><strong>CommunityScale</strong></p>
+					<p><a href="https://communityscale.io/tag/housing-study/" target="_blank">Housing plans</a></p>
+					<p><a href="https://communityscale.io/tag/zoning/" target="_blank">Zoning</a></p>
+					<p><a href="https://communityscale.io/tag/consulting/" target="_blank">Consulting</a></p>
+				</div>
+				<div class="four columns">
+					<p><strong>Housing Forecast</strong></p>
+					<p><a href="https://communityscale.io/housing-studies/" target="_blank">Methodology</a></p>
+					<p><a href="https://communityscale.io/housing-studies/" target="_blank">Data sources</a></p>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="twelve columns">
+					<hr style="margin: 12px 0px 12px 0px; border: 1px solid #ccc;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="twelve columns">
+					<p>© 2025 CommunityScale LLC
+						<span style="float: right;">
+							<a href="https://www.linkedin.com/company/communityscale" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+							<a href="https://github.com/CommunityScale" target="_blank" aria-label="GitHub"><i class="fa fa-github"></i></a>
+							<a href="https://x.com/CommunityScale" target="_blank" aria-label="X (formerly Twitter)"><i class="fa fa-twitter"></i></a>
+						</span>
+					</p>
+				</div>
+			</div>
+
 		</div>
+	</div>
 
-		<script type="text/javascript" src="nav-javascript.js"></script>
+	<script type="text/javascript" src="nav-javascript.js"></script>
 
-		<!-- End Document
+	<!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 
