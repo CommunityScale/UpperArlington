@@ -1,25 +1,3 @@
-.cover{
-  position:relative;          /* establish containing block  */
-  min-height:60vh;            /* or a fixed px height */
-  overflow:hidden;            /* clip overflow from iframe   */
-}
-
-/* iframe behaves like a background */
-.bg-frame{
-  position:absolute;
-  inset:0;                    /* top:0; right:0; bottom:0; left:0 */
-  width:100%;
-  height:100%;
-  border:0;
-  object-fit:cover;           /* crops like a background image */
-  z-index:1;                  /* behind the text */
-}
-
-/* bring your headline/table forward */
-.cover .hero{
-  position:relative;
-  z-index:2;
-}
 
 
 
